@@ -1,0 +1,65 @@
+<div class="d-flex align-items-center justify-content-center">
+    <form action="/realty/image-upload" class="w-50" method="POST" enctype="multipart/form-data">
+
+        <label for="selectedThumbnail1"> image1</label>
+        <div class="input-group mb-3">
+            <input type="file" class="custom-file-input" name="thumbnail1" id="selectedThumbnail1"
+                aria-describedby="inputGroupFileAddon03" />
+            <label id="thumbStatus" class="custom-file-label" for="inputGroupFile03">عکس مورد نظر را انتخاب کنید</label>
+        </div>
+
+        <label for="selectedThumbnail2">image2</label>
+        <div class="input-group mb-3">
+            <input type="file" class="custom-file-input" name="thumbnail2" id="selectedThumbnail2"
+                aria-describedby="inputGroupFileAddon03" />
+            <label id="thumbStatus" class="custom-file-label" for="inputGroupFile03">عکس مورد نظر را انتخاب کنید</label>
+        </div>
+
+        <label for="selectedThumbnail3">image3</label>
+        <div class="input-group mb-3">
+            <input type="file" class="custom-file-input" name="thumbnail3" id="selectedThumbnail3"
+                aria-describedby="inputGroupFileAddon03" />
+            <label id="thumbStatus" class="custom-file-label" for="inputGroupFile03">عکس مورد نظر را انتخاب کنید</label>
+        </div>
+
+
+        <label for="">id</label>
+        <div class="input-group mb-3">
+            <input type="text" class="" name="realtyid" id="realtyid" aria-describedby="inputGroupFileAddon03" />
+        </div>
+
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-sm btn-outline-secondary" type="button" id="imageUpload">
+                    آپلود عکس
+                </button>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="selectedImage" name="selectedImage" />
+                <label id="imageStatus" class="custom-file-label" for="selectedImage">
+                    عکس مورد نظر را انتخاب کنید
+                </label>
+            </div>
+        </div>
+
+        <div id="progressDiv" style="display: none">
+            <div class="progress">
+                <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-light text-center">
+            <p id="uploadResult" class="overflow-auto">آدرس عکس آپلود شده</p>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="save" class="btn btn-success m-2" />
+
+        </div>
+
+
+    </form>
+</div>

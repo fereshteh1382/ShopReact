@@ -1,0 +1,18 @@
+<div class="addsmsform">
+    <form class="form-signin" action="/users/addsms-post/<%= userid %>" method="POST">
+        <h1 class="h3 mb-3 font-weight-normal">افزودن شارژ کاربر</h1>
+
+        <%- //include("./includes/validationErrors.ejs") %>
+            <span>نام و نام خانوادگی : </span>
+            <span>
+                <%= fullname %>
+            </span>
+
+            <label for="smscount" class="sr-only">تعداد پیامک</label>
+            <input type="number" name="smscount" id="smscount" class="form-control mb-2" placeholder="تعداد پیامک" />
+
+            <button class="btn  btn-primary " type="submit">
+                ذخیره
+            </button>
+    </form>
+</div>

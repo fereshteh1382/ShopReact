@@ -1,0 +1,40 @@
+<section class="home-content" style="margin-top:30px;">
+    <div class="container">
+        <div class="row">
+            <% for (let realty of allrealtys) { %>
+                <div class="col-md-6 col-lg-3 ">
+                    <div class="product">
+                        <a href="#" class="img-prod">
+                            <img class="img-fluid" src="/img/product.jpg" alt="melk" />
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a href="#">
+                                    <%= realty.title %>
+                                </a></h3>
+                            <div class="d-flex">
+                                <div class="mx-auto">
+                                    <p class="price">
+                                        <span>
+                                            <%= realty.price %>
+                                        </span>
+                                        <span> تومان</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <% if (realty.status==="private" ) { %>
+                                <a href="/realty/confirmrealty/<%= realty._id %>"
+                                    class="btn btn-sm btn-success">تایید</a>
+                                </a>
+                                <% } else if (realty.status==="public" ){ %>
+                                    <a href="/realty/noconfirmrealty/<%= realty._id %>"
+                                        class="btn btn-sm btn-danger">عدم تایید</a>
+                                    <% } %>
+
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<h3 class="mt-2 text-center">ویرایش کاربر </h3>
+<div class="w-50 mx-auto">
+    <%- include("../includes/validationErrors.ejs") %>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+    <form action="/usersgroup/edit-usersgroup/<%= usergroup._id %>" class="w-50" method="POST"
+        enctype="multipart/form-data">
+        <label for="inputFullname" class="sr-only">نام و نام خانوادگی</label>
+        <input id="inputFullname" type="fullname" name="fullname" class="form-control mb-2"
+            placeholder="نام و نام خانوادگی" autofocus value="<%= usergroup.fullname %>" />
+        <label for="inputUsername" class="sr-only">نام کاربری </label>
+        <input id="inputUsername" type="username" name="username" class="form-control mb-2" placeholder="نام کاربری"
+            autofocus value="<%= usergroup.username %>" />
+        <label for="inputLevel" class="sr-only">گروه</label>
+        <input type="level" name="level" id="inputLevel" class="form-control mb-2" placeholder="گروه کاربری"
+            value="<%= usergroup.level %>" />
+        <label for="inputEmail" class="sr-only">آدرس ایمیل</label>
+        <input type="email" name="email" id="inputEmail" class="form-control mb-2" placeholder="آدرس ایمیل"
+            value="<%= usergroup.email %>" />
+        <label for="inputPassword" class="sr-only">کلمه عبور</label>
+        <input type="password" name="password" id="inputPassword" class="form-control mb-2" placeholder="کلمه عبور"
+            value="<%= usergroup.password %>" />
+        <label for="inputConfirmPassword" class="sr-only">تکرار کلمه عبور</label>
+        <input type="password" name="confirmPassword" id="inputConfirmPassword" class="form-control"
+            placeholder="تکرار کلمه عبور" value="<%= usergroup.password %>" />
+        <div class="row">
+            <input type="submit" value="ثبت " class="btn btn-success m-2" />
+            <a href="/usersgroup" class="btn btn-warning m-2">انصراف</a>
+        </div>
+    </form>
+</div>

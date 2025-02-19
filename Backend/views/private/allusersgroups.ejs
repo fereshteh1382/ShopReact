@@ -1,0 +1,76 @@
+<% if (allusers.length> 0) { %>
+    <h2 class="mt-2"> لیست کاربران</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام و نام خانوادگی</th>
+                    <th>موبایل</th>
+                    <th>تاریخ</th>
+                    <th>sms</th>
+                    <th>وضعیت</th>
+                    <th colspan="2">عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let user of allusers) { %>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <!-- <a href="/usersgroup/edit-usersgroup/<%= user._id %>"> -->
+                            <%= user.fullname %>
+                                <!-- </a> -->
+                        </td>
+                        <td>
+                            <%= user.mobile %>
+                        </td>
+                        <td>
+                            <%= //user.createdAt %>
+                        </td>
+                        <td>
+                            <%=user.smscount %>
+                        </td>
+                        <td>
+                            <span class="badge <%=user.status===" active" ? 'badge-success' : 'badge-warning' %>">
+                                <!-- <%= user.status==="active" ? "غیرفعال" : "فعال" %> -->
+                                <%= user.status %>
+                            </span>
+
+                        </td>
+                        <!--  <td>
+                            <a href="/usersgroup/edit-usersgroup/<%= user._id %>"
+                                class="btn btn-sm btn-primary">ویرایش</a>
+                        </td> -->
+                        <td>
+                            <% if (user.status==="active" ) { %>
+                                <a href="/users/disactive-user/<%= user._id %>" class="btn btn-sm btn-warning">مسدود
+                                </a>
+                                <% } else if (user.status==="noactive" ){ %>
+                                    <a href="/users/active-user/<%= user._id %>"
+                                        class="btn btn-sm btn-success">تایید</a>
+                                    <% } %>
+
+                        </td>
+                        <td>
+                            <% if (user.status!=="admin" ){ %>
+                                <a href="/users/delete-user/<%= user._id %>" class="btn btn-sm btn-danger">حذف</a>
+                                <a href="/users/addsms-user/<%= user._id %>" class="btn btn-sm btn-primary">شارژ</a>
+                                <a href="/realty/all-userrealtyforadmin/<%= user._id %>"
+                                    class="btn btn-sm btn-success">فایلها</a>
+
+                                <% } %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+        <%- include("../includes/pagination.ejs") %>
+    </div>
+    <% } else { %>
+        <div class="text-center">
+            <h3 class="mt-2">
+                در حال حاضر هیچ کاربری در پایگاه داده ثبت نشده است
+            </h3>
+        </div>
+        <% } %>

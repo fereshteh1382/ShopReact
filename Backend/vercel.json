@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "name": "amlak-react",
+    "builds": [
+        {
+            "src": "app.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/.*",
+            "dest": "app.js",
+            "methods": [
+                "GET"
+            ]
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/app.js"
+        }
+    ]
+}
